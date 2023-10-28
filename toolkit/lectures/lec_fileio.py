@@ -60,20 +60,20 @@ cnts  = '?'
 # ----------------------------------------------------------------------------
 #   Reading one line at a time
 # ----------------------------------------------------------------------------
-#fobj = open(SRCFILE, mode='r')
+fobj = open(SRCFILE, mode='r')
 
 # Read the first line
-#first_line = next(fobj)
+first_line = next(fobj)
 
 # After that, the fobj iterator now points to the second line in the file
 
 #for line in fobj:
-#    print(f"fobj now point to : '{line}'")
-#    break
-#
+    print(f"fobj now point to : '{line}'")
+    break
+
 
 # close the file
-#fobj.close()
+fobj.close()
 
 
 # ----------------------------------------------------------------------------
@@ -81,15 +81,15 @@ cnts  = '?'
 # ----------------------------------------------------------------------------
 # Instead of fobj = open(SRCFILE, mode='r'), use a context manager:
 
-#with open(SRCFILE, mode='r') as fobj:
-#    cnts = fobj.read()
-#    # Check if the object is closed inside the manager
-#    print(f'Is the fobj closed inside the manager? {fobj.closed}')
-#
+with open(SRCFILE, mode='r') as fobj:
+   cnts = fobj.read()
+   # Check if the object is closed inside the manager
+   print(f'Is the fobj closed inside the manager? {fobj.closed}')
+
 
 # Notice that we did not close the object when using a context manager
 # But after exiting the context manager, the file will automatically close
-#print(f'Is the fobj closed after we exit the manager? {fobj.closed}')
+print(f'Is the fobj closed after we exit the manager? {fobj.closed}')
 
 
 # ----------------------------------------------------------------------------
